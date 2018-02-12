@@ -34,8 +34,17 @@ void DriveWithGamepad::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void DriveWithGamepad::Execute() {
-	auto joystick = Robot::oi->getGamepad();  // originaly auto&
-	Robot::driveTrain->driveGamepad(-joystick->GetRawAxis(1) ,-joystick->GetRawAxis(5) );
+	auto driverJoystick = Robot::oi->getGamepad();  // originaly auto&
+
+
+	if ((bool) driverJoystick->GetRawButton(5))
+	{
+		Robot::driveTrain->drivePrecisionGamepad(-driverJoystick->GetRawAxis(1) ,-driverJoystick->GetRawAxis(5));
+	}
+	else
+	{
+		Robot::driveTrain->driveGamepad(-driverJoystick->GetRawAxis(1) ,-driverJoystick->GetRawAxis(5));
+	}
 }
 
 // Make this return true when this Command no longer needs to run execute()
