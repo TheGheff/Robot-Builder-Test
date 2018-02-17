@@ -72,10 +72,10 @@ void Intake::Shoot() {
 
 void Intake::Stop() {
     // Put code here to be run every loop
-	SmartDashboard::PutString("DB/String 0", "Stop");
-	SmartDashboard::PutString("DB/String 1", "Stop");
-	SmartDashboard::PutString("DB/String 5", "Stop");
-	SmartDashboard::PutString("DB/String 6", "Stop");
+	//SmartDashboard::PutString("DB/String 0", "Stop");
+	//SmartDashboard::PutString("DB/String 1", "Stop");
+	//SmartDashboard::PutString("DB/String 5", "Stop");
+	//SmartDashboard::PutString("DB/String 6", "Stop");
 	intakeLeft->Set(0);
 	intakeRight->Set(0);
 }

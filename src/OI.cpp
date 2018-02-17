@@ -40,6 +40,12 @@ OI::OI() {
     nD_LiftDOWN->WhileHeld(new LiftDown());
     nD_LiftUP.reset(new frc::JoystickButton(nonDriveGamepad.get(), 6));
     nD_LiftUP->WhileHeld(new LiftUp());
+    nD_Shoot.reset(new frc::JoystickButton(nonDriveGamepad.get(), 4));
+    nD_Shoot->WhileHeld(new ShootBlock());
+    nD_Spit.reset(new frc::JoystickButton(nonDriveGamepad.get(), 2));
+    nD_Spit->WhileHeld(new SpitBlock());
+    nD_Gobble.reset(new frc::JoystickButton(nonDriveGamepad.get(), 3));
+    nD_Gobble->WhileHeld(new GobbleBlock());
     nD_Grab.reset(new frc::JoystickButton(nonDriveGamepad.get(), 1));
     nD_Grab->WhileHeld(new GrabBlock());
     joystick.reset(new frc::Joystick(1));
@@ -60,17 +66,17 @@ OI::OI() {
     
     shoot.reset(new frc::JoystickButton(gamepad.get(), 4));
     shoot->WhileHeld(new ShootBlock());
-    gobble.reset(new frc::JoystickButton(gamepad.get(), 3));
-    gobble->WhileHeld(new GobbleBlock());
     spit.reset(new frc::JoystickButton(gamepad.get(), 2));
     spit->WhileHeld(new SpitBlock());
+    gobble.reset(new frc::JoystickButton(gamepad.get(), 3));
+    gobble->WhileHeld(new GobbleBlock());
     grab.reset(new frc::JoystickButton(gamepad.get(), 1));
     grab->WhileHeld(new GrabBlock());
 
     // SmartDashboard Buttons
     frc::SmartDashboard::PutData("AutoDelayDrive", new AutoDelayDrive());
     frc::SmartDashboard::PutData("AutoRotate", new AutoRotate());
-    frc::SmartDashboard::PutData("AutoDistForward: MinDrive", new AutoDistForward(72, 0, 0));
+    frc::SmartDashboard::PutData("AutoDistForward: ZeroDrive", new AutoDistForward(0, 0, 0));
     frc::SmartDashboard::PutData("LiftRun", new LiftRun());
     frc::SmartDashboard::PutData("LiftDown", new LiftDown());
     frc::SmartDashboard::PutData("LiftUp", new LiftUp());

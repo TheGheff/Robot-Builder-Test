@@ -49,12 +49,12 @@ void Lift::Periodic() {
 
 void Lift::Raise() {
 
-	lift->Set(1);
+	lift->Set(.3);
 }
 
 void Lift::Lower() {
 
-	lift->Set(-1);
+	lift->Set(-.3);
 }
 
 void Lift::StopLift() {
@@ -64,6 +64,10 @@ void Lift::StopLift() {
 
 void Lift::RunLift(double speed) {
 
+	if (speed > .1)
+	{
+		speed=.1;
+	}
 	lift->Set(speed);
 }
 // Put methods for controlling this subsystem
