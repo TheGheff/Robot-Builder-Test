@@ -82,7 +82,7 @@ Children:
             default: '2'
             name: CAN ID
             validators: &id008 [CANID]
-            value: '2'
+            value: '1'
         Base: Talon SRX
         Name: DriveLeft
       - Children: []
@@ -92,7 +92,7 @@ Children:
             default: '2'
             name: CAN ID
             validators: *id008
-            value: '1'
+            value: '2'
         Base: Talon SRX
         Name: DriveRight
       Properties:

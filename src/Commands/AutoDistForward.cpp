@@ -39,7 +39,7 @@ void AutoDistForward::Execute() {
 	m_Dist_Traveled_Left = RobotMap::driveTrainEncoderLeft->GetDistance();
 	m_Dist_Traveled_Right = RobotMap::driveTrainEncoderRight->GetDistance();
 
-	Robot::driveTrain->driveStraight(.5, .5, m_Dist_Traveled_Left, m_Dist_Traveled_Right );
+	Robot::driveTrain->driveStraight(.2, .2, m_Dist_Traveled_Left, m_Dist_Traveled_Right );
 		//Robot::driveTrain->drivePrecisionGamepad(.5,.5);
 
 }
@@ -53,17 +53,17 @@ bool AutoDistForward::IsFinished() {
 
 //if ((m_Dist_Traveled_Left > m_Distance_Inches))// || (m_Dist_Traveled_Right > m_Distance_Inches))
 //{//
-		return (m_Dist_Traveled_Left >= 32)  || (m_Dist_Traveled_Right >= 32) || (IsTimedOut());
+		return ((m_Dist_Traveled_Left >= 60)  || (m_Dist_Traveled_Right >= 60));// || (IsTimedOut());
 
     //return false;
 }
 
 // Called once after isFinished returns true
 void AutoDistForward::End() {
-	m_Dist_Traveled_Left = 0;
-	m_Dist_Traveled_Right = 0;
-	RobotMap::driveTrainEncoderLeft->Reset();
-	RobotMap::driveTrainEncoderRight->Reset();
+	//m_Dist_Traveled_Left = 0;
+	//m_Dist_Traveled_Right = 0;
+	//RobotMap::driveTrainEncoderLeft->Reset();
+	//RobotMap::driveTrainEncoderRight->Reset();
 	Robot::driveTrain->drivePrecisionGamepad(0,0);
 }
 

@@ -45,10 +45,10 @@ void RobotMap::init() {
     lw->AddSensor("DriveTrain", "EncoderLeft", driveTrainEncoderLeft);
     driveTrainEncoderLeft->SetDistancePerPulse(1.0);
     driveTrainEncoderLeft->SetPIDSourceType(frc::PIDSourceType::kRate);
-    driveTrainDriveLeft.reset(new WPI_TalonSRX(2));
+    driveTrainDriveLeft.reset(new WPI_TalonSRX(1));
     
     
-    driveTrainDriveRight.reset(new WPI_TalonSRX(1));
+    driveTrainDriveRight.reset(new WPI_TalonSRX(2));
     
     
     driveTrainTank.reset(new frc::DifferentialDrive(*driveTrainDriveLeft, *driveTrainDriveRight));
