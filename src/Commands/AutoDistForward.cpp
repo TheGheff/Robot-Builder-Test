@@ -36,8 +36,11 @@ void AutoDistForward::Initialize() {
 void AutoDistForward::Execute() {
 
 
+	m_Dist_Traveled_Left = RobotMap::driveTrainEncoderLeft->GetDistance();
+	m_Dist_Traveled_Right = RobotMap::driveTrainEncoderRight->GetDistance();
 
-		Robot::driveTrain->drivePrecisionGamepad(.5,.5);
+	Robot::driveTrain->driveStraight(.5, .5, m_Dist_Traveled_Left, m_Dist_Traveled_Right );
+		//Robot::driveTrain->drivePrecisionGamepad(.5,.5);
 
 }
 
@@ -50,7 +53,7 @@ bool AutoDistForward::IsFinished() {
 
 //if ((m_Dist_Traveled_Left > m_Distance_Inches))// || (m_Dist_Traveled_Right > m_Distance_Inches))
 //{//
-		return (m_Dist_Traveled_Left >= 32) || (IsTimedOut());
+		return (m_Dist_Traveled_Left >= 32)  || (m_Dist_Traveled_Right >= 32) || (IsTimedOut());
 
     //return false;
 }

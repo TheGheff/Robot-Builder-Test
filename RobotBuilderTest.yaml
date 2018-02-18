@@ -1043,9 +1043,9 @@ Children:
         validators: null
         value:
         - !!robotbuilder.data.properties.ParameterSet
-          name: MinDrive
+          name: ZeroDrive
           parameters:
-          - {name: Distance_Feet, type: double, value: '72'}
+          - {name: Distance_Inches, type: double, value: '0'}
           - {name: Dist_Traveled_Left, type: double, value: '0'}
           - {name: Dist_Traveled_Right, type: double, value: '0'}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
