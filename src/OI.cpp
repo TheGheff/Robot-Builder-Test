@@ -74,7 +74,6 @@ OI::OI() {
     grab->WhileHeld(new GrabBlock());
 
     // SmartDashboard Buttons
-    frc::SmartDashboard::PutData("AutoDelayDrive", new AutoDelayDrive());
     frc::SmartDashboard::PutData("AutoRotate", new AutoRotate());
     frc::SmartDashboard::PutData("AutoDistForward: ZeroDrive", new AutoDistForward(0, 0, 0));
     frc::SmartDashboard::PutData("LiftRun", new LiftRun());

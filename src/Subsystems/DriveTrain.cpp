@@ -41,8 +41,6 @@ DriveTrain::DriveTrain() : frc::Subsystem("DriveTrain") {
     encoderLeft->SetDistancePerPulse(distancePerRev/ticksPerRev);
     encoderLeft->SetReverseDirection(true);
 
-    double Val = 0;
-
 }
 
 void DriveTrain::InitDefaultCommand() {
@@ -80,10 +78,6 @@ void DriveTrain::driveAutoDistance(double Speed){
 }
 
 void DriveTrain::driveStraight(double leftSpeed, double rightSpeed, double leftEncoder, double rightEncoder ){
-
-
-	Val = leftEncoder - rightEncoder;
-	//rightSpeed += Val * .1;
 
 	tank->TankDrive(leftSpeed, (rightSpeed), false);
 }
