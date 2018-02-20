@@ -36,15 +36,22 @@ void DriveWithGamepad::Initialize() {
 void DriveWithGamepad::Execute() {
 	auto driverJoystick = Robot::oi->getGamepad();  // originally auto&
 
+double leftSide = driverJoystick->GetRawAxis(1);
+double rightSide = driverJoystick->GetRawAxis(5);
+
 
 	if ((bool) driverJoystick->GetRawButton(5))
 	{
-		Robot::driveTrain->drivePrecisionGamepad(-driverJoystick->GetRawAxis(1) ,-driverJoystick->GetRawAxis(5));
+		leftSide = leftSide/3;
+		rightSide = rightSide/3;
 	}
 	else
 	{
-		Robot::driveTrain->driveGamepad(-driverJoystick->GetRawAxis(1) ,-driverJoystick->GetRawAxis(5));
+		leftSide = leftSide/4;
+		rightSide = rightSide/4;
 	}
+
+	Robot::driveTrain->driveGamepad(-leftSide ,-rightSide);
 }
 
 // Make this return true when this Command no longer needs to run execute()

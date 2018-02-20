@@ -37,6 +37,7 @@ void AutoTalonDistForward::Execute() {
 	//RobotMap::driveTrainDriveLeft->Set(ControlMode::Position , 2048 );
 	RobotMap::driveTrainDriveRight->Set(ControlMode::Follower , RobotMap::driveTrainDriveLeft->GetDeviceID() );
 //
+
 ////	changeControlMode(ControlMode.Position); //Change control mode of talon, default is PercentVbus (-1.0 to 1.0)
 	RobotMap::driveTrainDriveLeft->ConfigSelectedFeedbackSensor(FeedbackDevice::QuadEncoder, 0, 1000); //Set the feedback device that is hooked up to the talon
 	RobotMap::driveTrainDriveLeft->Config_kP(0, 0.22, 1000);
