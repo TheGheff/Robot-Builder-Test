@@ -42,8 +42,8 @@ double rightSide = driverJoystick->GetRawAxis(5);
 
 	if ((bool) driverJoystick->GetRawButton(5))
 	{
-		leftSide = leftSide/3;
-		rightSide = rightSide/3;
+		leftSide = leftSide/2;
+		rightSide = rightSide/2;
 	}
 	else
 	{
