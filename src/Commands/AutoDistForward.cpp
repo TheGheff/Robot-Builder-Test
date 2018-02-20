@@ -53,7 +53,7 @@ bool AutoDistForward::IsFinished() {
 
 //if ((m_Dist_Traveled_Left > m_Distance_Inches))// || (m_Dist_Traveled_Right > m_Distance_Inches))
 //{//
-		return ((m_Dist_Traveled_Left >= 60)  || (m_Dist_Traveled_Right >= 60));// || (IsTimedOut());
+		return ((m_Dist_Traveled_Left >= 132)  || (m_Dist_Traveled_Right >= 132));// || (IsTimedOut());
 
     //return false;
 }

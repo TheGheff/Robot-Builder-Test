@@ -49,12 +49,12 @@ void Lift::Periodic() {
 
 void Lift::Raise() {
 
-	lift->Set(.3);
+	lift->Set(1);
 }
 
 void Lift::Lower() {
 
-	lift->Set(-.3);
+	lift->Set(-1);
 }
 
 void Lift::StopLift() {

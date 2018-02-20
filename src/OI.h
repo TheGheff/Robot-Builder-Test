@@ -30,7 +30,6 @@ private:
 	
 	
 	
-	
 	std::shared_ptr<frc::Joystick> nonDriveGamepad;
 	std::shared_ptr<frc::JoystickButton> nD_LiftDOWN;
 	std::shared_ptr<frc::JoystickButton> nD_LiftUP;

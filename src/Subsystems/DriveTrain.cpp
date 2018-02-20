@@ -66,6 +66,11 @@ void DriveTrain::driveGamepad(double left, double right){
 	tank->TankDrive(left, right, false);
 }
 
+void DriveTrain::driveJoystick(double X, double Y){
+
+	tank->ArcadeDrive(X, Y, false);
+}
+
 void DriveTrain::drivePrecisionGamepad(double left, double right){
 
 	tank->TankDrive(left, right, true);

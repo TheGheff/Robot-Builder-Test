@@ -38,6 +38,8 @@ public:
 	void InitDefaultCommand() override;
 	void Periodic() override;
 	void driveGamepad(double left, double right);
+	void driveJoystick(double X, double Y);
+
 	void drivePrecisionGamepad(double left, double right);
 	void driveAutoDistance(double Speed);
 	void driveStraight(double leftSpeed, double rightSpeed, double leftEncoder, double rightEncoder );
