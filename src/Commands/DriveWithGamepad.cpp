@@ -39,16 +39,15 @@ void DriveWithGamepad::Execute() {
 double leftSide = driverJoystick->GetRawAxis(1);
 double rightSide = driverJoystick->GetRawAxis(5);
 
-
-	if ((bool) driverJoystick->GetRawButton(5))
-	{
-		leftSide = leftSide/2;
-		rightSide = rightSide/2;
-	}
-	else if (((bool) driverJoystick->GetRawButton(5)) && ((bool) driverJoystick->GetRawButton(6)))
+if (((bool) driverJoystick->GetRawButton(5)) && ((bool) driverJoystick->GetRawButton(6)))
 	{
 		leftSide = leftSide/1; // The /1 is to keep the speed at 100%
 		rightSide = rightSide/1;
+	}
+else if ((bool) driverJoystick->GetRawButton(5))
+	{
+		leftSide = leftSide/2;
+		rightSide = rightSide/2;
 	}
 	else
 	{
