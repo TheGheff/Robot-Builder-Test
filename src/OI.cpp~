@@ -15,6 +15,7 @@
 #include "SmartDashboard/SmartDashboard.h"
 #include "Commands/AutoDistForward.h"
 #include "Commands/AutoLeftSideForward.h"
+#include "Commands/AutoLift.h"
 #include "Commands/AutoRightSideForward.h"
 #include "Commands/AutoSpit.h"
 #include "Commands/AutoTalonDistForward.h"
@@ -81,6 +82,7 @@ OI::OI() {
     grab->WhileHeld(new GrabBlock());
 
     // SmartDashboard Buttons
+    frc::SmartDashboard::PutData("AutoLift: UP", new AutoLift(.75));
     frc::SmartDashboard::PutData("AutoSpit", new AutoSpit());
     frc::SmartDashboard::PutData("AutoRightSideForward: ZeroDrive", new AutoRightSideForward(0, 0));
     frc::SmartDashboard::PutData("AutoRightSideForward: 132 Inches", new AutoRightSideForward(132, 0));

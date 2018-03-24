@@ -259,6 +259,24 @@ Children:
         value: *id014
     Base: Subsystem
     Name: Intake
+  - Children: []
+    Properties:
+      Send to SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: false,
+        name: Send to SmartDashboard, validators: null, value: false}
+      Default command parameters: !!robotbuilder.data.properties.ParametersProperty
+        default: []
+        name: Default command parameters
+        validators: null
+        value: []
+      Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Default Command, type: Command, validators: null, value: None}
+      Constants: !!robotbuilder.data.properties.ConstantsProperty
+        default: []
+        name: Constants
+        validators: null
+        value: []
+    Base: Subsystem
+    Name: Riser
   Properties: {}
   Base: Subsystems
   Name: Subsystems
@@ -1381,10 +1399,10 @@ Children:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Requires, type: Subsystem, validators: null, value: Intake}
       Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-        default: &id026 []
+        default: []
         name: Parameter presets
         validators: null
-        value: *id026
+        value: []
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
@@ -1404,14 +1422,14 @@ Children:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Requires, type: Subsystem, validators: null, value: None}
       Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-        default: &id027
+        default: []
+        name: Parameter presets
+        validators: null
+        value:
         - !!robotbuilder.data.properties.ParameterSet
           name: UP
           parameters:
           - {name: Speed, type: double, value: '.75'}
-        name: Parameter presets
-        validators: null
-        value: *id027
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
@@ -1431,9 +1449,7 @@ Properties:
     value:
     - !!robotbuilder.data.properties.ValuedParameterDescriptor {name: Distance_Inches,
       type: double, value: '0'}
-    - !!robotbuilder.data.properties.ValuedParameterDescriptor {name: Dist_Traveled_Left,
-      type: double, value: '0'}
-    - !!robotbuilder.data.properties.ValuedParameterDescriptor {name: Dist_Traveled_Right,
+    - !!robotbuilder.data.properties.ValuedParameterDescriptor {name: Start_Delay,
       type: double, value: '0'}
   Java Package: !!robotbuilder.data.properties.StringProperty {default: org.usfirst.frc0000,
     name: Java Package, validators: null, value: org.usfirst.frc6974}
