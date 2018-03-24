@@ -31,38 +31,45 @@ void AutoLeftSideForward::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void AutoLeftSideForward::Execute() {
-	AddSequential(new AutoDistForward(132, 0));
-	std::string gameData;
-	gameData = frc::DriverStation::GetInstance().GetGameSpecificMessage();
-	//Lift up
-				  	  Robot::lift->Raise();
 
 
-	if(gameData.length > 0)
-	  {
-		  if(gameData[0] == 'L')
+	if (!l_alreadyRunOnce)
+	{
+		Addsequential(new AutoLift(.1));
+		AddSequential(new AutoDistForward(132, 0));
+		std::string gameData;
+		gameData = frc::DriverStation::GetInstance().GetGameSpecificMessage();
+
+
+
+		if(gameData.length > 0)
 		  {
-			  //spit block
-			  	  Robot::intake->Spit();
-		  }
-		  else
-		  { //Stop
+			  if(gameData[0] == 'L')
+			  {
+				  //spit block
+				  AddSequential(new AutoSpit());
+			  }
+			  else
+			  { //Stop
 
-		  }
-	   }
-
+			  }
+		   }
+		m_alreadyRunOnce = true;
+	}
 
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool AutoLeftSideForward::IsFinished() {
-    return false;
+    return IsTimedOut();
 }
 
 // Called once after isFinished returns true
 void AutoLeftSideForward::End() {
 	//Lift up
 		Robot::lift->StopLift();
+
+		m_alreadyRunOnce = false;
 }
 
 // Called when another command which requires one or more of the same

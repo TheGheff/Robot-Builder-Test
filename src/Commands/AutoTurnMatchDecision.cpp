@@ -38,19 +38,19 @@ void AutoTurnMatchDecision::Execute() {
 	m_Dist_Traveled_Left = RobotMap::driveTrainEncoderLeft->GetDistance();
 	m_Dist_Traveled_Right = RobotMap::driveTrainEncoderRight->GetDistance();
 
-	std::string gameData;
-	gameData = frc::DriverStation::GetInstance().GetGameSpecificMessage();
-	  if(gameData.length > 0)
-	  {
-		  if(gameData[0] == 'L')
-		  {//Turn Left
-				Robot::driveTrain->driveStraight(.2, .2, m_Dist_Traveled_Left, m_Dist_Traveled_Right );
-		  }
-		  else
-		  { //Turn Right
-				Robot::driveTrain->driveStraight(.2, .2, m_Dist_Traveled_Left, m_Dist_Traveled_Right );
-		  }
-	   }
+//	std::string gameData;
+//	gameData = frc::DriverStation::GetInstance().GetGameSpecificMessage();
+//	  if(gameData.length > 0)
+//	  {
+//		  if(gameData[0] == 'L')
+//		  {//Turn Left
+//				Robot::driveTrain->driveStraight(.2, .2, m_Dist_Traveled_Left, m_Dist_Traveled_Right );
+//		  }
+//		  else
+//		  { //Turn Right
+//				Robot::driveTrain->driveStraight(.2, .2, m_Dist_Traveled_Left, m_Dist_Traveled_Right );
+//		  }
+//	   }
 
 
 	Robot::driveTrain->driveStraight(.2, .2, m_Dist_Traveled_Left, m_Dist_Traveled_Right );
