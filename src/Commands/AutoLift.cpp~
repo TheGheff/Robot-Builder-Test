@@ -29,7 +29,7 @@ void AutoLift::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void AutoLift::Execute() {
-	Robot::lift->RunLift(m_speed);
+	Robot::lift->RunLift(m_Speed);
 }
 
 // Make this return true when this Command no longer needs to run execute()

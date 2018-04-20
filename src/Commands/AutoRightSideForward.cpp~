@@ -33,27 +33,27 @@ void AutoRightSideForward::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void AutoRightSideForward::Execute() {
 
-	if (!l_alreadyRunOnce)
+	if (m_alreadyRunOnce)
 	{
-		Addsequential(new AutoLift(.1));
-		AddSequential(new AutoDistForward(132, 0));
+//		Addsequential(new AutoLift(.1));
+	//	AddSequential(new AutoDistForward(132, 0));
 		std::string gameData;
 		gameData = frc::DriverStation::GetInstance().GetGameSpecificMessage();
 
 
 
-		if(gameData.length > 0)
-		  {
-			  if(gameData[0] == 'L')
-			  {
-				  //spit block
-				  AddSequential(new AutoSpit());
-			  }
-			  else
-			  { //Stop
-
-			  }
-		   }
+//		if(gameData.length > 0)
+//		  {
+//			  if(gameData[0] == 'L')
+//			  {
+//				  //spit block
+//				 // AddSequential(new AutoSpit());
+//			  }
+//			  else
+//			  { //Stop
+//
+//			  }
+//		   }
 		m_alreadyRunOnce = true;
 	}
 

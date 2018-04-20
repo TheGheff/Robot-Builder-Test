@@ -100,8 +100,8 @@ OI::OI() {
     frc::SmartDashboard::PutData("AutoLeftSideForward: ZeroDrive", new AutoLeftSideForward(0, 0));
     frc::SmartDashboard::PutData("AutoLeftSideForward: 132 Inches", new AutoLeftSideForward(132, 0));
     frc::SmartDashboard::PutData("AutoLeftSideForward: 132w/10sDelay", new AutoLeftSideForward(132, 10));
-    frc::SmartDashboard::PutData("AutoTurnMatchDecisionSecondTurn", new AutoTurnMatchDecisionSecondTurn());
-    frc::SmartDashboard::PutData("AutoTurnMatchDecision", new AutoTurnMatchDecision());
+  //  frc::SmartDashboard::PutData("AutoTurnMatchDecisionSecondTurn", new AutoTurnMatchDecisionSecondTurn());
+    //frc::SmartDashboard::PutData("AutoTurnMatchDecision", new AutoTurnMatchDecision());
     frc::SmartDashboard::PutData("AutoTurnRight", new AutoTurnRight());
     frc::SmartDashboard::PutData("Start_in_Center", new Start_in_Center());
     frc::SmartDashboard::PutData("AutoTurnLeft", new AutoTurnLeft());

@@ -23,22 +23,22 @@ RiserDown::RiserDown(): frc::Command() {
 
 // Called just before this Command runs the first time
 void RiserDown::Initialize() {
-
+	SetTimeout(1);
 }
 
 // Called repeatedly when this Command is scheduled to run
 void RiserDown::Execute() {
-
+	Robot::riser->Lower();
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool RiserDown::IsFinished() {
-    return false;
+	   return IsTimedOut();
 }
 
 // Called once after isFinished returns true
 void RiserDown::End() {
-
+	Robot::riser->StopRiser();
 }
 
 // Called when another command which requires one or more of the same
