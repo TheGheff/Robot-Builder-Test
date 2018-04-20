@@ -47,25 +47,25 @@ void Intake::Periodic() {
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
 void Intake::Grab() {
-    SmartDashboard::PutString("DB/String 0", "Grab");
+    //SmartDashboard::PutString("DB/String 0", "Grab");
 	intakeLeft->Set(.5);
 	intakeRight->Set(.5);
 }
 
 void Intake::Gobble() {
-    SmartDashboard::PutString("DB/String 1", "Gobble");
+    //SmartDashboard::PutString("DB/String 1", "Gobble");
 	intakeLeft->Set(1);
 	intakeRight->Set(1);
 }
 
 void Intake::Spit() {
-	SmartDashboard::PutString("DB/String 5", "Spit");
+	//SmartDashboard::PutString("DB/String 5", "Spit");
 	intakeLeft->Set(-.5);
 	intakeRight->Set(-.5);
 }
 
 void Intake::Shoot() {
-	SmartDashboard::PutString("DB/String 6", "Shoot");
+	//SmartDashboard::PutString("DB/String 6", "Shoot");
 	intakeLeft->Set(-10);
 	intakeRight->Set(-10);
 }
